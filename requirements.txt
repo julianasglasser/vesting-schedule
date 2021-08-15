@@ -1,0 +1,5 @@
+# These requirements are needed for running the tests.
+# Refer to setup.py for the list of the project dependencies.
+
+coverage==5.0.3
+pudb==2019.2
