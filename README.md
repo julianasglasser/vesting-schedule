@@ -54,4 +54,4 @@ E003,Cat Helms,NSO-002,0
 
 ## License
 
-This project uses MIT License.
+Distributed under the MIT license. See `LICENSE` for more information.
