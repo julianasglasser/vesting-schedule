@@ -1,0 +1,8 @@
+README.md
+setup.py
+vesting.py
+vesting.egg-info/PKG-INFO
+vesting.egg-info/SOURCES.txt
+vesting.egg-info/dependency_links.txt
+vesting.egg-info/requires.txt
+vesting.egg-info/top_level.txt
