@@ -2,22 +2,25 @@
 # vesting.py
 __version__ = '0.1.0'
 
+from os import error
 import sys
 import datetime
 import pandas as pd
 
 def get_parameters():
     # get parameters from stdin
-    filename = sys.argv[1]
-    target_date = sys.argv[2]
-    target_date = datetime.datetime.fromisoformat(target_date)
-
+    try:
+        filename = sys.argv[1]
+        target_date = sys.argv[2]
+        target_date = datetime.datetime.fromisoformat(target_date)
+    except IndexError as exception:
+        print('Please, make sure you are passing two positional arguments. Error:', exception)
+        exit()
     return filename, target_date
 
 def create_dataframe(filename):
     # create dataframe
-    df = pd.read_csv(filename,
-        header=None)
+    df = pd.read_csv(filename, header=None)
     df.columns = ['vestingType', 'employeeID', 'employeeName', 'awardID', 'date', 'quantity']
     df.date = pd.to_datetime(df.date)
 
@@ -35,8 +38,9 @@ def group_by_employee_and_award(df, target_date):
     # group events by employee id and award type given the date is before the target date
     df_group = df.copy()
     df_group.quantity = df_group.apply(lambda x: x.quantity if x.date <= target_date else 0, axis=1)
+    df_group.quantity = df_group.apply(lambda x: -1 * x.quantity if x.vestingType == 'CANCEL' else x.quantity, axis=1)
     df_group = df_group.groupby(by=['employeeID', 'awardID']).sum()
-    df_group = df_group.reset_index()
+    df_group = df_group.reset_index() # explicar
 
     return df_group
 
