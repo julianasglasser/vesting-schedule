@@ -45,8 +45,9 @@ def format_response(df, employees):
     df = df.sort_values(by=['employeeID', 'awardID'])
     df['employeeName'] = df.apply(lambda x: employees[x.employeeID], axis=1)
     df = df[['employeeID', 'employeeName', 'awardID', 'quantity']] # change columns order
-    
-    return df
+    response = df.to_csv(header=None, index=False)
+
+    return response
 
 def main():
     filename, target_date = get_parameters()
