@@ -51,3 +51,7 @@ E001,Alice Smith,ISO-002,800
 E002,Bobby Jones,NSO-001,600
 E003,Cat Helms,NSO-002,0
 ```
+
+## License
+
+This project uses MIT License.
