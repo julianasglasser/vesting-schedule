@@ -35,12 +35,6 @@ python3 setup.py install
 python3 vesting.py [filename.csv] [YYYY-MM-DD]
 ```
 
-**OR**
-
-```bash
-./vesting.py [filename.csv] [YYYY-MM-DD]
-```
-
 ## Example
 
 This is an example of how to run:
