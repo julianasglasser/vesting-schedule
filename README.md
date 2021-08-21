@@ -27,7 +27,7 @@ Along with the command to run, you should input at `stdin` two arguments. The fi
 
 ```bash
 python3 setup.py install
-python3 vesting.py [filename.csv] [YYYY-MM-DD]
+./vesting.py [filename.csv] [YYYY-MM-DD]
 ```
 
 ## Example
@@ -35,7 +35,7 @@ python3 vesting.py [filename.csv] [YYYY-MM-DD]
 This is an example of how to run:
 
 ```bash
-python3 vesting.py vesting_events.csv 2021-04-01
+./vesting.py vesting_events.csv 2021-04-01
 ```
 
 This is an example of response:
