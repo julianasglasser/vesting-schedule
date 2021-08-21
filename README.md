@@ -12,11 +12,6 @@ Since the project is very simple, and also because of the time constraints, I di
 
 Before running you should make sure you have `python3` and `pip` installed.
 
-```bash
-pip install -r requirements.txt
-python3 setup.py install
-```
-
 ## Available Scripts
 
 ### To run tests

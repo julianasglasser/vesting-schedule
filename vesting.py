@@ -37,7 +37,7 @@ def group_by_employee_and_award(df, target_date):
     df_group.quantity = df_group.apply(lambda x: x.quantity if x.date <= target_date else 0, axis=1)
     df_group.quantity = df_group.apply(lambda x: -1 * x.quantity if x.vestingType == 'CANCEL' else x.quantity, axis=1)
     df_group = df_group.groupby(by=['employeeID', 'awardID']).sum()
-    df_group = df_group.reset_index() # explicar
+    df_group = df_group.reset_index()
 
     return df_group
 
